@@ -1,0 +1,15 @@
+Deletes a product based on the id provided
+    ---
+    tags:
+      - Product
+    parameters:
+      - name: product_id
+        in: path
+        type: string
+        required: true
+        description: The uuid of the product to delete
+    responses:
+      404:
+        description: Product not found!
+      200:
+        description: Deletion request sucessful
