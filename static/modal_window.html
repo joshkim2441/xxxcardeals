@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/styles/index.css">
+    <script language="JavaScript" src="/scripts/myservices.js" type="text/javascript"></script>
+</head>
+<div id="modal_wrapper">
+<div id="modal_window">
+
+<div style="text-align: right;"><a id="modal_close" href="#">close <b>X</b></a></div>
+
+<p>Complete the form below to send an email:</p>
+
+<form id="modal_feedback" method="POST" action="#" accept-charset="UTF-8">
+<p><label>Your Name<strong>*</strong><br>
+<input type="text" autofocus required size="200" name="name" value=""></label></p>
+<p><label>Email Address<strong>*</strong><br>
+<input type="email" required title="Please enter a valid email address" size="200" name="email" value=""></label></p>
+<p><label>Subject<br>
+<input type="text" size="200" name="subject" value=""></label></p>
+<p><label>Enquiry<strong>*</strong><br>
+<textarea required name="message" cols="48" rows="8"></textarea></label></p>
+<p><input type="submit" name="feedbackForm" value="Send Message"></p>
+</form>
+
+</div> <!-- #modal_window -->
+</div> <!-- #modal_wrapper -->
+<script type="text/javascript">
+
+  if(document.addEventListener) {
+    document.getElementById("modal_feedback").addEventListener("submit", checkForm, false);
+    window.addEventListener("DOMContentLoaded", modal_init, false);
+  } else {
+    document.getElementById("modal_feedback").attachEvent("onsubmit", checkForm);
+    window.attachEvent("onload", modal_init);
+  }
+
+</script>
+</body>
+</html>
