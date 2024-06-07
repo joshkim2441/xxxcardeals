@@ -23,8 +23,8 @@
  <script>
      $(function () {
                 var login_window = $("#login-dialog").dialog({autoOpen: false,
-                    height: 280,
-                    width: 520,
+                    height: 520,
+                    width: 1024,
                     modal: true,
                     closeText: '',
                     close: function(){

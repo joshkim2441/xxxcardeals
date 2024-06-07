@@ -4,6 +4,7 @@ Fabric script that generates a tgz archive from the contents of the static
 folder of the xXx car deals repo
 """
 
+import paramiko
 from datetime import datetime
 from fabric.api import local
 from os.path import isdir
@@ -20,7 +21,6 @@ def do_pack():
     result = local("tar -cvzf {} static".format(file_path))
     if result.failed:
         return None
-    archize_size = os.stat(file_path).st_size
+    archive_size = os.stat(file_path).st_size
     print("static packed: {} -> {} Bytes".format(file_path, archize_size))
     return file_path
-
