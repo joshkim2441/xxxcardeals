@@ -52,7 +52,7 @@
 <body>
  <script src="../scripts/login-registration.js"></script>
     <div class="demo-container">
-        <h2>WEBSERVE Login Registration</h2>
+        <h2>XXX CarDealers Login Registration</h2>
         <div class="login-registration-menu">
             <input type="button" value="Login" id="btn-login"> <input
                 type="button" value="Register" id="btn-register">
