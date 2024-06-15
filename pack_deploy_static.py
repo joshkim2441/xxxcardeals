@@ -40,15 +40,19 @@ def do_deploy(archive_path):
         no_ext = file_n.split(".")[0]
         path = "/data/docs/releases/"
         put(archive_path, '/tmp/')
+        print("Archive uploaded.")
         run('mkdir -p {}{}/'.format(path, no_ext))
-        run('tar -xzf /tmp/{} -C {}{}/'.format(file_n, path, no_ext))
+        print("Directory created.")
+        result = run('tar -xzf /tmp/{} -C {}{}/'.format(file_n, path, no_ext))
+        print("Extraction result: ", result)
         run('rm /tmp/{}'.format(file_n))
         run('mv {0}{1}/docs/* {0}{1}/'.format(path, no_ext))
         run('rm -rf {}{}/docs'.format(path, no_ext))
         run('rm -rf /data/docs/current')
         run('ln -s {}{}/ /data/docs/current'.format(path, no_ext))
         return True
-    except Exception:
+    except Exception as e:
+        print(f"An error occurred: {e}")
         return False
 
 
